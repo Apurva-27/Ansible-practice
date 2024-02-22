@@ -1,0 +1,29 @@
+---
+- name: This for creation of file and folder
+  hosts: 192.168.81.131
+  tasks:
+    - name: user
+      user: 
+        name: harry
+        state: present
+
+    - name: group
+      group:
+        name: admin
+        state: present
+
+    - name: file
+      file:
+        path: /root/test
+        mode: 2700
+        owner: harry
+        group: admin
+        state: touch
+
+    - name: dir
+      file:
+        path: /root/cloud
+        mode: 2700
+        owner: harry
+        group: admin
+        state: directory

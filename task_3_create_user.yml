@@ -1,0 +1,10 @@
+---
+- name: this is a playbook of 3rd task
+  hosts: 192.168.81.131
+  tasks:
+    - name: create user
+      user:
+        name: sara
+        groups: devops
+        state: present
+

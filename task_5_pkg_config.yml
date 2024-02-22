@@ -1,0 +1,18 @@
+---
+- name: install packages 
+  hosts: 192.168.81.131
+  tasks:
+
+    - name: install httpd
+      yum:
+        name: 
+            - httpd
+            - ftp
+        state: present
+
+    - name: enable services
+      sercices: 
+            - httpd
+            - ftp
+      state: start
+      enable: yes
