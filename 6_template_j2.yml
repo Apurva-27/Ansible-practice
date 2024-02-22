@@ -1,0 +1,9 @@
+---
+- name: call template to run
+  hosts: all
+  tasks: 
+      - name: run template
+        template: 
+              src: temp.j2
+              dest: /root/hw-report
+  

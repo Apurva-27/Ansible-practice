@@ -1,0 +1,27 @@
+---
+- name: create user via variables
+  hosts: all
+  vars:
+      user: sara
+      pkg1: httpd
+      pkg2: ftp
+      group: cloud123
+
+  tasks: 
+       - name: create user via variable
+         user: 
+              name: "{{user}}" 
+              state: present
+
+       - name: install packages
+         yum: 
+            name: "{{item}}"
+            state: present
+         loop: 
+               - "{{pkg1}}"
+               - "{{pkg2}}"
+
+       - name: add group
+         group:
+           name: systemcloud
+           state: present                          

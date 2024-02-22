@@ -1,0 +1,28 @@
+---
+- name: This is playbook of multiple task
+  hosts: all
+  tasks:
+    - name: create user
+      ansible.builtin.user:
+                      name: test
+                      state: present
+
+    - name: create group
+      ansible.builtin.group:
+                      name: cloud123
+                      state: present
+
+    - name: install packages
+      ansible.builtin.yum: 
+                      name: httpd
+                      state: present
+
+    
+- name: for creation of file
+  hosts: all
+  tasks: 
+    - name: create file
+      ansible.builtin.file:
+                      name: /root/apurva
+                      state: touch
+

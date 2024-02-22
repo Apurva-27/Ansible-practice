@@ -1,0 +1,4 @@
+user: sara
+pkg1: httpd
+pkg2: ftp
+group: hacker

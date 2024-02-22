@@ -1,0 +1,13 @@
+---
+- name: Copy module
+  hosts: all
+  tasks: 
+     - name: copy content from src to dest
+       copy:
+         src: testing
+         dest: /root/
+
+     - name: create new file with content
+       copy:
+          content: this is test file
+          dest: /root/demo123

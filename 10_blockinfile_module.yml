@@ -1,0 +1,12 @@
+---
+- name: This is block in file module
+  hosts: all
+  tasks:
+       - name: add a block in existing file
+         blockinfile:
+                path: /root/demo123
+                block: | 
+                      this line 1 from block in file module
+                      this line 2 from block in file module
+                      this line 3 from block in file module
+                state: present

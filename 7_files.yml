@@ -1,0 +1,23 @@
+---
+- name: create files and folders
+  hosts: all
+  tasks: 
+      - name: create file
+        file: 
+          path: /root/test
+          state: touch
+          owner: sara
+          group: cloudtest
+          mode: 0600
+
+      - name: create folder
+        file: 
+          path: /root/webasha
+          state: directory
+
+
+
+
+
+
+            

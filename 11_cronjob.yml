@@ -1,0 +1,16 @@
+---
+- name: This is for cronjob
+  hosts: all
+  tasks: 
+      - name: shedule cronjob to manage and run date cmd in every 1 min
+        cron:
+          name: this job for every 1 min
+          minute: "*/1"
+          hour: 10-18
+          day: 1-31
+          month: 1-12
+          weekday: 0-5
+          user: root
+          job: date >> /root/date_output
+          cron_file: abc
+          state: absent

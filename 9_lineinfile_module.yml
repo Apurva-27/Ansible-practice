@@ -1,0 +1,9 @@
+---
+- name: This is line in file module
+  hosts: all
+  tasks:
+       - name: add a line in existing file
+         lineinfile:
+                path: /root/demo123
+                line: this line is from line in file module
+                state: present

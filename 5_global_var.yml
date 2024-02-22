@@ -1,0 +1,22 @@
+---
+- name: including var file
+  hosts: all
+  vars_files: 
+            - var.yml
+  tasks: 
+        - name: create user via variable
+          user: 
+              name: "{{user}}"
+              state: present
+
+        - name: install packages
+          yum:
+              name: 
+                  - "{{pkg1}}"
+                  - "{pkg2{}}"
+              state: present
+
+        - name: create group
+          group:
+              name: "{{group}}"
+              state: present
